@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Kisah Cinta Interaktif - Fasya & Ichsan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        background: #fce4ec;
+        font-family: "Arial", sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        color: #333;
+      }
+
+      #love-story-container {
+        text-align: center;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        width: 90%;
+      }
+
+      h1 {
+        color: #ff4d88;
+      }
+
+      #story-text {
+        font-size: 18px;
+        margin-bottom: 20px;
+        line-height: 1.6;
+      }
+
+      .choice-button {
+        padding: 10px;
+        background-color: #ff4d88;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 10px;
+        transition: background-color 0.3s ease;
+      }
+
+      .choice-button:hover {
+        background-color: #ff3366;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="love-story-container">
+      <h1>Kisah Cinta Interaktif - Fasya & Ichsan</h1>
+      <div id="story-text">
+        <p>Di dunia yang penuh keajaiban, hiduplah seorang putri bernama Fasya. Dia tinggal di sebuah kerajaan yang indah dan penuh warna.</p>
+        <p>Fasya selalu bermimpi tentang pertemuan yang akan mengubah hidupnya. Suatu hari, takdir membawanya menemui pangeran tampan bernama Ichsan.</p>
+        <p>Kisah mereka dimulai...</p>
+        <p>Pilihan 1: Apakah Fasya ingin tahu lebih banyak tentang Ichsan?</p>
+        <button class="choice-button" onclick="choice1()">Ya, tentu!</button>
+        <button class="choice-button" onclick="choice2()">Biarkan waktu yang berbicara</button>
+      </div>
+    </div>
+
+    <script>
+      function choice1() {
+        document.getElementById("story-text").innerHTML += `<p>Fasya memutuskan untuk mencari tahu lebih banyak tentang Ichsan. Melalui petualangannya, dia mengetahui betapa istimewanya Ichsan.</p>
+                <p>Pilihan 2: Apakah Fasya ingin mencoba mengirimkan surat kepada Ichsan?</p>
+                <button class="choice-button" onclick="choice3()">Kirim surat</button>
+                <button class="choice-button" onclick="choice4()">Biarkan hati berbicara</button>`;
+      }
+
+      function choice2() {
+        document.getElementById("story-text").innerHTML += `<p>Fasya memilih untuk membiarkan waktu berbicara. Namun, perasaannya terhadap Ichsan semakin tumbuh setiap hari.</p>
+                <p>Pilihan 2: Apakah Fasya ingin mencoba mengirimkan surat kepada Ichsan?</p>
+                <button class="choice-button" onclick="choice3()">Kirim surat</button>
+                <button class="choice-button" onclick="choice4()">Biarkan hati berbicara</button>`;
+      }
+
+      function choice3() {
+        document.getElementById("story-text").innerHTML += `<p>Fasya memutuskan untuk mengirim surat kepada Ichsan, mengungkapkan perasaannya. Ichsan membaca surat tersebut dengan hati yang tersentuh.</p>
+                <p>Pilihan 3: Apakah Fasya ingin mengajak Ichsan untuk bertemu?</p>
+                <button class="choice-button" onclick="choice5()">Ajak bertemu</button>
+                <button class="choice-button" onclick="choice6()">Biarkan waktu menentukan</button>`;
+      }
+
+      function choice4() {
+        document.getElementById("story-text").innerHTML += `<p>Fasya memilih untuk membiarkan hatinya berbicara. Setiap momen bersama Ichsan membawa kebahagiaan yang luar biasa.</p>
+                <p>Pilihan 3: Apakah Fasya ingin mengajak Ichsan untuk bertemu?</p>
+                <button class="choice-button" onclick="choice5()">Ajak bertemu</button>
+                <button class="choice-button" onclick="choice6()">Biarkan waktu menentukan</button>`;
+      }
+
+      function choice5() {
+        document.getElementById("story-text").innerHTML += `<p>Fasya dengan berani mengajak Ichsan untuk bertemu. Ichsan setuju, dan pertemuan mereka menjadi titik balik dalam kisah cinta mereka.</p>
+                <p>Akhir Cerita: Ichsan dan Fasya bersatu dalam cinta sejati, dan hidup bahagia bersama-sama.</p>
+                <a href="login.php"><button class="choice-button" onclick="saveAuthenticationStatus()">Bertemu dengan Ichsan</button></a>`;
+      }
+
+      function choice6() {
+        document.getElementById("story-text").innerHTML += `<p>Fasya memilih untuk membiarkan waktu menentukan jalannya kisah cinta. Hingga suatu hari, takdir mempertemukan mereka secara kebetulan.</p>
+                <p>Akhir Cerita: Ichsan dan Fasya bersatu dalam cinta sejati, dan hidup bahagia bersama-sama. Tapi belum dapat bertemu lagi</p>`;
+      }
+    </script>
+
+    <script>
+      function saveAuthenticationStatus() {
+        // Simpan status autentikasi di sessionStorage
+        sessionStorage.setItem("isAuthenticated", true);
+      }
+    </script>
+  </body>
+</html>
